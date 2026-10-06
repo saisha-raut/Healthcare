@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Patient Registration - CarePlus</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="form.css">
+</head>
+
+<body>
+
+<header>
+    <h1>CarePlus Clinical Laboratory</h1>
+    <p>Patient Registration and Appointment Booking</p>
+</header>
+
+<nav>
+    <a href="index.html">Home</a>
+    <a href="tests.html">Tests</a>
+    <a href="details.html">Details</a>
+    <a href="doctors.html">Doctors</a>
+    <a href="table.html">Prices</a>
+    <a href="registration.html">Register</a>
+    <a href="reports.html">Reports</a>
+    <a href="health.html">Health Info</a>
+    <a href="media.html">Media</a>
+</nav>
+
+<main>
+
+<section class="form-container">
+
+    <h2>Patient Registration</h2>
+
+    <form id="registrationForm">
+
+        <label>Patient Name</label>
+        <input type="text" id="patientName">
+        <span id="nameError" class="error"></span>
+
+
+        <label>Mobile Number</label>
+        <input type="text" id="mobile">
+        <span id="mobileError" class="error"></span>
+
+
+        <label>Patient ID</label>
+        <input type="text" id="patientId" placeholder="PAT-1234">
+        <span id="idError" class="error"></span>
+
+
+        <label>Email</label>
+        <input type="email" id="email">
+        <span id="emailError" class="error"></span>
+
+
+        <label>Date of Birth</label>
+        <input type="date" id="dob">
+
+
+        <label>Gender</label>
+
+        <select id="gender">
+            <option value="">Select Gender</option>
+            <option>Female</option>
+            <option>Male</option>
+            <option>Other</option>
+        </select>
+
+
+        <label>Blood Group</label>
+
+        <select id="bloodGroup">
+            <option value="">Select Blood Group</option>
+            <option>A+</option>
+            <option>A-</option>
+            <option>B+</option>
+            <option>B-</option>
+            <option>AB+</option>
+            <option>AB-</option>
+            <option>O+</option>
+            <option>O-</option>
+        </select>
+
+
+        <label>Department</label>
+
+        <select id="department">
+
+            <option value="">Select Department</option>
+            <option>General Medicine</option>
+            <option>Cardiology</option>
+            <option>Pathology</option>
+            <option>Orthopaedics</option>
+            <option>Neurology</option>
+            <option>Paediatrics</option>
+
+        </select>
+
+
+        <label>Service / Package</label>
+
+        <select id="service">
+
+            <option value="">Select Service</option>
+
+            <option value="450">
+                Complete Blood Count - ₹450
+            </option>
+
+            <option value="600">
+                HbA1c - ₹600
+            </option>
+
+            <option value="800">
+                Liver Function Test - ₹800
+            </option>
+
+            <option value="750">
+                Kidney Function Test - ₹750
+            </option>
+
+            <option value="500">
+                ECG - ₹500
+            </option>
+
+            <option value="1499">
+                Basic Health Check - ₹1499
+            </option>
+
+            <option value="999">
+                Diabetes Screening - ₹999
+            </option>
+
+            <option value="2499">
+                Senior Health Check - ₹2499
+            </option>
+
+        </select>
+
+
+        <label>Appointment Date</label>
+        <input type="date" id="appointmentDate">
+
+
+        <label>Address</label>
+        <textarea id="address"></textarea>
+
+
+        <div class="fee-box">
+
+            <h3>Fee Calculation</h3>
+
+            <p>Service Fee: ₹<span id="serviceFee">0</span></p>
+
+            <p>Registration Fee: ₹100</p>
+
+            <p>
+                <strong>
+                    Total: ₹<span id="totalFee">100</span>
+                </strong>
+            </p>
+
+        </div>
+
+
+        <button type="submit" class="button">
+            Register Patient
+        </button>
+
+        <button type="reset" class="button reset-button">
+            Clear Form
+        </button>
+
+    </form>
+
+
+    <div id="successMessage"></div>
+
+</section>
+
+
+<section class="info-box">
+
+    <h3>Registration Demonstration</h3>
+
+    <p>
+        Patient ID must follow the format PAT-1234.
+    </p>
+
+    <p>
+        Mobile number must contain exactly 10 digits.
+    </p>
+
+    <p>
+        All mandatory information should be completed before submission.
+    </p>
+
+</section>
+
+</main>
+
+<footer>
+    <p>© 2026 CarePlus Clinical Laboratory</p>
+</footer>
+
+
+<script>
+
+function validateName(name){
+    return /^[A-Za-z ]+$/.test(name);
+}
+
+function validateMobile(mobile){
+    return /^[0-9]{10}$/.test(mobile);
+}
+
+function validatePatientId(id){
+    return /^PAT-[0-9]{4}$/.test(id);
+}
+
+function validateEmail(email){
+    return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+}
+
+
+const service = document.getElementById("service");
+
+service.addEventListener("change", function(){
+
+    let serviceFee = Number(service.value);
+
+    document.getElementById("serviceFee").textContent = serviceFee;
+
+    document.getElementById("totalFee").textContent =
+        serviceFee + 100;
+
+});
+
+
+document.getElementById("patientName").addEventListener("input", function(){
+
+    if(validateName(this.value)){
+        this.classList.remove("invalid");
+        document.getElementById("nameError").textContent = "";
+    }
+
+});
+
+
+document.getElementById("mobile").addEventListener("input", function(){
+
+    if(validateMobile(this.value)){
+        this.classList.remove("invalid");
+        document.getElementById("mobileError").textContent = "";
+    }
+
+});
+
+
+document.getElementById("gender").addEventListener("change", function(){
+
+    console.log("Gender selected:", this.value);
+
+});
+
+
+document.getElementById("registrationForm").addEventListener("submit", function(event){
+
+    event.preventDefault();
+
+    let name = document.getElementById("patientName").value.trim();
+    let mobile = document.getElementById("mobile").value.trim();
+    let patientId = document.getElementById("patientId").value.trim();
+    let email = document.getElementById("email").value.trim();
+    let dob = document.getElementById("dob").value;
+    let gender = document.getElementById("gender").value;
+    let department = document.getElementById("department").value;
+    let serviceValue = document.getElementById("service").value;
+    let appointmentDate = document.getElementById("appointmentDate").value;
+
+
+    let valid = true;
+
+
+    if(!validateName(name)){
+        document.getElementById("nameError").textContent =
+            "Enter a valid name.";
+        document.getElementById("patientName").classList.add("invalid");
+        valid = false;
+    }
+
+
+    if(!validateMobile(mobile)){
+        document.getElementById("mobileError").textContent =
+            "Enter a valid 10-digit mobile number.";
+        document.getElementById("mobile").classList.add("invalid");
+        valid = false;
+    }
+
+
+    if(!validatePatientId(patientId)){
+        document.getElementById("idError").textContent =
+            "Use format PAT-1234.";
+        valid = false;
+    }
+
+
+    if(!validateEmail(email)){
+        document.getElementById("emailError").textContent =
+            "Enter a valid email address.";
+        valid = false;
+    }
+
+
+    if(!dob){
+        alert("Please select Date of Birth.");
+        valid = false;
+    }
+
+
+    if(!gender || !department || !serviceValue){
+        alert("Please complete all selections.");
+        valid = false;
+    }
+
+
+    if(!appointmentDate){
+        alert("Please select an appointment date.");
+        valid = false;
+    }
+
+
+    if(valid){
+
+        let serviceFee = Number(serviceValue);
+        let total = serviceFee + 100;
+
+        document.getElementById("successMessage").innerHTML = `
+            <div class="success">
+                <h3>Registration Successful</h3>
+                <p>Welcome, ${name}.</p>
+                <p>Patient ID: ${patientId}</p>
+                <p>Department: ${department}</p>
+                <p>Total Fee: ₹${total}</p>
+                <p>Your appointment request has been recorded.</p>
+            </div>
+        `;
+
+        console.log("Patient registered:", {
+            name,
+            mobile,
+            patientId,
+            email,
+            department,
+            appointmentDate,
+            total
+        });
+
+        alert("Patient registration successful!");
+
+    }
+
+});
+
+</script>
+
+</body>
+</html>

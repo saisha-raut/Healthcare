@@ -2,8 +2,49 @@
 <html>
 <head>
     <title>Laboratory Gallery</title>
+
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="nav.css">
+
+    <style>
+        .gallery {
+            display: flex !important;
+            flex-wrap: nowrap !important;
+            gap: 20px;
+            width: 95%;
+            max-width: 1400px;
+            margin: 40px auto;
+            padding: 20px;
+            box-sizing: border-box;
+            overflow-x: auto;
+        }
+
+        .gallery figure {
+            flex: 1 1 0;
+            min-width: 0;
+            margin: 0;
+            padding: 12px;
+            background-color: white;
+            border-radius: 10px;
+            text-align: center;
+            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.15);
+            box-sizing: border-box;
+        }
+
+        .gallery img {
+            width: 100% !important;
+            height: 190px !important;
+            object-fit: cover !important;
+            display: block;
+            border-radius: 8px;
+        }
+
+        .gallery figcaption {
+            margin-top: 12px;
+            font-size: 16px;
+            font-weight: bold;
+        }
+    </style>
 </head>
 
 <body>
@@ -23,32 +64,34 @@
     <a href="reports.html">Reports</a>
     <a href="health.html">Health Info</a>
     <a href="media.html">Media</a>
+    <a href="gallery.html">Gallery</a>
+    <a href="offer.html">Offers</a>
 </nav>
 
 <section class="gallery">
 
     <figure>
-        <img src="https://images.unsplash.com/photo-1579684385127-1ef15d508118"
-             alt="Clinical Laboratory">
-        <figcaption>Clinical Laboratory</figcaption>
+        <img src="https://wankhedehospital.com/assets/hero-pathology-Bx2e5mvd.jpg"
+             alt="Modern Pathology Laboratory">
+        <figcaption>Modern Pathology Laboratory</figcaption>
     </figure>
 
     <figure>
-        <img src="https://images.unsplash.com/photo-1582719478250-c89cae4dc85b"
-             alt="Blood Collection Room">
-        <figcaption>Blood Collection Room</figcaption>
+        <img src="https://7-palms.net/assets/medical_lab.png"
+             alt="Laboratory Technician">
+        <figcaption>Laboratory Testing</figcaption>
     </figure>
 
     <figure>
-        <img src="https://images.unsplash.com/photo-1576091160399-112ba8d25d1d"
-             alt="Automated Analyzer">
-        <figcaption>Automated Analyzer</figcaption>
+        <img src="https://media-nhssc.azureedge.net/datashare/lab-technician-blood-sample-600x445-1.jpg"
+             alt="Blood Sample Analysis">
+        <figcaption>Blood Sample Analysis</figcaption>
     </figure>
 
     <figure>
-        <img src="https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d"
-             alt="Sample Processing Area">
-        <figcaption>Sample Processing Area</figcaption>
+        <img src="https://www.med.akita-u.ac.jp/~gimclm/cld/clinic-images/cl-2-2024-9.jpg"
+             alt="Microscopic Blood Analysis">
+        <figcaption>Microscopic Analysis</figcaption>
     </figure>
 
 </section>

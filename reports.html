@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Patient Reports - CarePlus</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<header>
+    <h1>CarePlus Clinical Laboratory</h1>
+    <p>Patient Report Portal</p>
+</header>
+
+<nav>
+    <a href="index.html">Home</a>
+    <a href="tests.html">Tests</a>
+    <a href="details.html">Details</a>
+    <a href="doctors.html">Doctors</a>
+    <a href="table.html">Prices</a>
+    <a href="registration.html">Register</a>
+    <a href="reports.html">Reports</a>
+    <a href="health.html">Health Info</a>
+    <a href="media.html">Media</a>
+</nav>
+
+<main>
+
+<section class="form-container">
+
+    <h2>View Patient Report</h2>
+
+    <p>
+        Enter the demonstration patient ID to access a sample report.
+    </p>
+
+    <form id="reportForm">
+
+        <label>Patient ID</label>
+
+        <input
+            type="text"
+            id="reportId"
+            placeholder="Example: PAT-1001"
+        >
+
+        <label>Date of Birth</label>
+
+        <input
+            type="date"
+            id="reportDob"
+        >
+
+        <button type="submit" class="button">
+            View Report
+        </button>
+
+    </form>
+
+    <div id="reportResult"></div>
+
+</section>
+
+
+<section class="disclaimer">
+
+    <h3>Demo Report</h3>
+
+    <p>
+        This page contains fictional patient data for academic
+        demonstration only. It is not connected to a real
+        hospital information system.
+    </p>
+
+</section>
+
+</main>
+
+<footer>
+    <p>© 2026 CarePlus Clinical Laboratory</p>
+</footer>
+
+
+<script>
+
+document.getElementById("reportForm").addEventListener("submit", function(event){
+
+    event.preventDefault();
+
+    let id = document.getElementById("reportId").value.trim();
+    let dob = document.getElementById("reportDob").value;
+
+    let result = document.getElementById("reportResult");
+
+    if(id === "PAT-1001" && dob === "2007-06-15"){
+
+        result.innerHTML = `
+        <div class="report-card">
+            <h2>Patient Laboratory Report</h2>
+
+            <p><strong>Patient ID:</strong> PAT-1001</p>
+            <p><strong>Patient Name:</strong> Saisha Raut</p>
+            <p><strong>Report Date:</strong> 04 October 2026</p>
+
+            <hr>
+
+            <h3>Test Results</h3>
+
+            <table>
+                <tr>
+                    <th>Test</th>
+                    <th>Result</th>
+                    <th>Status</th>
+                </tr>
+
+                <tr>
+                    <td>Complete Blood Count</td>
+                    <td>Demo Result</td>
+                    <td>For Review</td>
+                </tr>
+
+                <tr>
+                    <td>HbA1c</td>
+                    <td>Demo Result</td>
+                    <td>For Review</td>
+                </tr>
+
+                <tr>
+                    <td>Liver Function Test</td>
+                    <td>Demo Result</td>
+                    <td>For Review</td>
+                </tr>
+            </table>
+
+            <p class="small-note">
+                This is a fictional educational report and
+                must not be interpreted as a real medical report.
+            </p>
+
+        </div>
+        `;
+
+    }
+    else{
+
+        result.innerHTML =
+        "<p class='error'>No report found. Please check the demonstration Patient ID and Date of Birth.</p>";
+
+    }
+
+});
+
+</script>
+
+</body>
+</html>

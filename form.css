@@ -1,0 +1,53 @@
+.form-container {
+    max-width: 800px;
+    margin: 30px auto;
+}
+
+.form-container form {
+    display: flex;
+    flex-direction: column;
+}
+
+.form-container label {
+    margin-top: 15px;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+.form-container input,
+.form-container select,
+.form-container textarea {
+    padding: 12px;
+    border: 1px solid #bbb;
+    border-radius: 6px;
+    font-size: 15px;
+}
+
+.form-container textarea {
+    min-height: 100px;
+    resize: vertical;
+}
+
+.form-container input:focus,
+.form-container select:focus,
+.form-container textarea:focus {
+    outline: none;
+    border-color: #118AB2;
+}
+
+.invalid {
+    border: 2px solid #D62828 !important;
+    background-color: #fff4f4;
+}
+
+.fee-box {
+    background-color: #F2FAF9;
+    padding: 20px;
+    margin: 25px 0;
+    border-radius: 8px;
+    border-left: 5px solid #118AB2;
+}
+
+.reset-button {
+    background-color: #777;
+}

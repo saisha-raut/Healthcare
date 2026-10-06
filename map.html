@@ -1,153 +1,60 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Interactive Test Strip</title>
-
-    <style>
-        body {
-            margin: 0;
-            font-family: Arial, sans-serif;
-            background: #F2FAF9;
-            color: #243B53;
-        }
-
-        header {
-            background: #073B4C;
-            color: white;
-            text-align: center;
-            padding: 25px;
-        }
-
-        nav {
-            background: #118AB2;
-            text-align: center;
-            padding: 15px;
-        }
-
-        nav a {
-            color: white;
-            text-decoration: none;
-            margin: 10px;
-            font-weight: bold;
-        }
-
-        main {
-            width: 85%;
-            margin: 30px auto;
-            text-align: center;
-        }
-
-        .strip {
-            background: #F5F5DC;
-            border: 4px solid #D6C9A8;
-            width: 750px;
-            margin: 30px auto;
-            padding: 20px;
-            border-radius: 15px;
-        }
-
-        .pad {
-            display: inline-block;
-            width: 100px;
-            height: 100px;
-            margin: 10px;
-            padding: 10px;
-            border: 2px solid #073B4C;
-            background: #D9F3EE;
-            cursor: pointer;
-        }
-
-        .pad:hover {
-            background: #06A77D;
-            color: white;
-        }
-
-        footer {
-            background: #073B4C;
-            color: white;
-            text-align: center;
-            padding: 15px;
-        }
-    </style>
+    <title>Interactive Test Map</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="nav.css">
 </head>
 
 <body>
 
 <header>
-    <h1>Interactive Urine Test Strip</h1>
-    <p>Click a test parameter to learn more</p>
+    <h1>Interactive Urine Test Map</h1>
+    <p>Click the test parameters</p>
 </header>
 
 <nav>
     <a href="index.html">Home</a>
     <a href="tests.html">Tests</a>
     <a href="details.html">Details</a>
-    <a href="gallery.html">Gallery</a>
-    <a href="map.html">Test Map</a>
+    <a href="doctors.html">Doctors</a>
     <a href="table.html">Prices</a>
-    <a href="form.html">Register</a>
-  
+    <a href="registration.html">Register</a>
+    <a href="reports.html">Reports</a>
+    <a href="health.html">Health Info</a>
     <a href="media.html">Media</a>
 </nav>
 
-<main>
+<section class="content-box center">
 
-<h2 style="color:#073B4C;">Urine Test Strip</h2>
+    <h2>Urine Test Parameters</h2>
 
-<p>
-    The following interactive strip represents common parameters
-    evaluated during urine testing.
-</p>
+    <img src="https://images.unsplash.com/photo-1582719478250-c89cae4dc85b"
+         alt="Urine Testing"
+         width="500"
+         height="300"
+         usemap="#testmap">
 
-<div class="strip">
+    <map name="testmap">
+        <area shape="rect" coords="0,0,100,100"
+              href="details.html" alt="Glucose">
 
-    <a href="details.html">
-        <div class="pad">
-            <b>Glucose</b>
-            <br><br>
-            Sugar Level
-        </div>
-    </a>
+        <area shape="rect" coords="100,0,200,100"
+              href="details.html" alt="Protein">
 
-    <a href="details.html">
-        <div class="pad">
-            <b>Protein</b>
-            <br><br>
-            Protein Level
-        </div>
-    </a>
+        <area shape="rect" coords="200,0,300,100"
+              href="details.html" alt="Blood">
 
-    <a href="details.html">
-        <div class="pad">
-            <b>Blood</b>
-            <br><br>
-            Blood Indicator
-        </div>
-    </a>
+        <area shape="rect" coords="300,0,400,100"
+              href="details.html" alt="Ketone">
 
-    <a href="details.html">
-        <div class="pad">
-            <b>Ketone</b>
-            <br><br>
-            Ketone Level
-        </div>
-    </a>
+        <area shape="rect" coords="400,0,500,100"
+              href="details.html" alt="pH">
+    </map>
 
-    <a href="details.html">
-        <div class="pad">
-            <b>pH</b>
-            <br><br>
-            Acidity
-        </div>
-    </a>
+    <p>Click different areas of the image to view test information.</p>
 
-</div>
-
-<p>
-    <b>Click any parameter above to view test details.</b>
-</p>
-
-</main>
+</section>
 
 <footer>
     <p>© 2026 CarePlus Clinical Laboratory</p>

@@ -1,0 +1,20 @@
+nav {
+    background-color: #118AB2;
+    padding: 12px;
+    text-align: center;
+}
+
+nav a {
+    display: inline-block;
+    text-decoration: none;
+    color: white;
+    padding: 10px 15px;
+    margin: 5px;
+    border-radius: 8px;
+    transition: 0.3s;
+}
+
+nav a:hover {
+    background-color: #06A77D;
+    text-decoration: underline;
+}

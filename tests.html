@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Laboratory Tests - CarePlus</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<header>
+    <h1>CarePlus Clinical Laboratory</h1>
+    <p>Laboratory Tests and Diagnostics</p>
+</header>
+
+<nav>
+    <a href="index.html">Home</a>
+    <a href="tests.html">Tests</a>
+    <a href="details.html">Details</a>
+    <a href="doctors.html">Doctors</a>
+    <a href="table.html">Prices</a>
+    <a href="registration.html">Register</a>
+    <a href="reports.html">Reports</a>
+    <a href="health.html">Health Info</a>
+    <a href="media.html">Media</a>
+</nav>
+
+<main>
+
+<section>
+
+    <h2>Available Laboratory Tests</h2>
+
+    <input
+        type="text"
+        id="searchTest"
+        placeholder="Search for a test..."
+        class="search-box"
+    >
+
+    <div class="test-grid" id="testList">
+
+        <div class="test-card">
+            <h3>Complete Blood Count</h3>
+            <p>
+                A commonly used blood test for general
+                health assessment.
+            </p>
+            <strong>₹450</strong>
+        </div>
+
+
+        <div class="test-card">
+            <h3>HbA1c</h3>
+            <p>
+                Provides information about average blood
+                glucose levels over a period of time.
+            </p>
+            <strong>₹600</strong>
+        </div>
+
+
+        <div class="test-card">
+            <h3>Liver Function Test</h3>
+            <p>
+                Laboratory testing used to assess various
+                aspects of liver function.
+            </p>
+            <strong>₹800</strong>
+        </div>
+
+
+        <div class="test-card">
+            <h3>Kidney Function Test</h3>
+            <p>
+                Laboratory testing used to assess
+                kidney-related parameters.
+            </p>
+            <strong>₹750</strong>
+        </div>
+
+
+        <div class="test-card">
+            <h3>ECG</h3>
+            <p>
+                Records the electrical activity of
+                the heart.
+            </p>
+            <strong>₹500</strong>
+        </div>
+
+    </div>
+
+    <p id="noResult" class="error"></p>
+
+</section>
+
+
+<section>
+
+    <h2>Patient Testing Process</h2>
+
+    <ol>
+        <li>Patient registration</li>
+        <li>Test selection</li>
+        <li>Sample collection</li>
+        <li>Laboratory processing</li>
+        <li>Report generation</li>
+        <li>Doctor consultation if required</li>
+    </ol>
+
+</section>
+
+
+<section>
+
+    <h2>Important Information</h2>
+
+    <div class="info-box">
+
+        <p>
+            Test requirements may vary depending on the
+            selected investigation.
+        </p>
+
+        <p>
+            Patients should follow the instructions provided
+            by the healthcare professional or laboratory.
+        </p>
+
+        <p>
+            Test prices displayed on this academic project
+            are demonstration values.
+        </p>
+
+    </div>
+
+</section>
+
+</main>
+
+
+<footer>
+    <p>© 2026 CarePlus Clinical Laboratory</p>
+</footer>
+
+
+<script>
+
+const searchBox = document.getElementById("searchTest");
+const testCards = document.querySelectorAll(".test-card");
+const noResult = document.getElementById("noResult");
+
+searchBox.addEventListener("input", function() {
+
+    let searchValue = searchBox.value.toLowerCase();
+    let found = false;
+
+    testCards.forEach(function(card) {
+
+        let text = card.textContent.toLowerCase();
+
+        if (text.includes(searchValue)) {
+
+            card.style.display = "block";
+            found = true;
+
+        } else {
+
+            card.style.display = "none";
+
+        }
+
+    });
+
+
+    if (!found) {
+
+        noResult.textContent = "No matching test found.";
+
+    } else {
+
+        noResult.textContent = "";
+
+    }
+
+});
+
+</script>
+
+</body>
+</html>

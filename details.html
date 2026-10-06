@@ -1,148 +1,143 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Test Details</title>
-
-    <style>
-        body {
-            margin: 0;
-            font-family: Arial, sans-serif;
-            background: #F2FAF9;
-            color: #2d4762ff;
-        }
-
-        header {
-            background: #073B4C;
-            color: white;
-            text-align: center;
-            padding: 25px;
-        }
-
-        nav {
-            background: #118AB2;
-            padding: 15px;
-            text-align: center;
-        }
-
-        nav a {
-            color: white;
-            text-decoration: none;
-            margin: 10px;
-            font-weight: bold;
-        }
-
-        main {
-            width: 80%;
-            margin: 30px auto;
-            background: white;
-            padding: 30px;
-        }
-
-        h2 {
-            color: #073B4C;
-        }
-
-        table {
-            width: 100%;
-            border-collapse: collapse;
-        }
-
-        th, td {
-            padding: 14px;
-            border: 1px solid #999;
-        }
-
-        th {
-            background: #073B4C;
-            color: white;
-        }
-
-        footer {
-            background: #073B4C;
-            color: white;
-            text-align: center;
-            padding: 15px;
-        }
-    </style>
+    <title>Test Details - CarePlus</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
 <header>
-    <h1>Urine Routine Examination</h1>
-    <p>Detailed Test Information</p>
+    <h1>CarePlus Clinical Laboratory</h1>
+    <p>Test Details and Appointment Demonstration</p>
 </header>
 
 <nav>
     <a href="index.html">Home</a>
     <a href="tests.html">Tests</a>
     <a href="details.html">Details</a>
-    <a href="gallery.html">Gallery</a>
-    <a href="map.html">Test Map</a>
+    <a href="doctors.html">Doctors</a>
     <a href="table.html">Prices</a>
-    <a href="form.html">Register</a>
-   
+    <a href="registration.html">Register</a>
+    <a href="reports.html">Reports</a>
+    <a href="health.html">Health Info</a>
     <a href="media.html">Media</a>
 </nav>
 
 <main>
 
-<h2>Test Overview</h2>
+<section>
 
-<table>
+    <h2>Common Test Information</h2>
 
-<tr>
-    <th>Test Name</th>
-    <td>Urine Routine Examination</td>
-</tr>
+    <div class="detail-card">
 
-<tr>
-    <th>Sample Required</th>
-    <td>Fresh Midstream Urine Sample</td>
-</tr>
+        <h3>Complete Blood Count</h3>
 
-<tr>
-    <th>Purpose</th>
-    <td>Evaluation of physical, chemical and microscopic properties of urine</td>
-</tr>
+        <p>
+            CBC is a commonly used blood test that measures
+            several components of blood.
+        </p>
 
-<tr>
-    <th>Report Time</th>
-    <td>Within 24 Hours</td>
-</tr>
+        <p><strong>Sample:</strong> Blood</p>
+        <p><strong>Category:</strong> Laboratory Test</p>
 
-<tr>
-    <th>Fasting Required</th>
-    <td>Generally Not Required</td>
-</tr>
+    </div>
 
-</table>
 
-<h2>Preparation Instructions</h2>
+    <div class="detail-card">
 
-<ul>
-    <li>Use a clean and sterile sample container.</li>
-    <li>Collect a fresh midstream urine sample.</li>
-    <li>Submit the sample to the laboratory as soon as possible.</li>
-    <li>Follow additional instructions given by your doctor.</li>
-</ul>
+        <h3>HbA1c</h3>
 
-<h2>Parameters Commonly Checked</h2>
+        <p>
+            HbA1c provides information about average blood
+            glucose levels over a period of time.
+        </p>
 
-<p>
-    Colour, appearance, pH, glucose, protein, ketones, blood and
-    other microscopic findings may be evaluated.
-</p>
+        <p><strong>Sample:</strong> Blood</p>
+        <p><strong>Category:</strong> Diabetes Screening</p>
 
-<p style="background:#FFF3CD;padding:15px;">
-    <b>Note:</b> Test results must be interpreted by a qualified healthcare professional.
-</p>
+    </div>
+
+
+    <div class="detail-card">
+
+        <h3>Liver Function Test</h3>
+
+        <p>
+            Liver function testing includes laboratory
+            measurements used to assess aspects of liver health.
+        </p>
+
+        <p><strong>Sample:</strong> Blood</p>
+        <p><strong>Category:</strong> Biochemistry</p>
+
+    </div>
+
+</section>
+
+
+<section>
+
+    <h2>Appointment Priority Demonstration</h2>
+
+    <p>
+        This JavaScript demonstration shows how different
+        conditions can produce different appointment-priority
+        messages. It is not a medical triage system.
+    </p>
+
+    <button class="button" onclick="checkPriority()">
+        Run Priority Demo
+    </button>
+
+    <div id="priorityResult" class="info-box"></div>
+
+</section>
 
 </main>
 
 <footer>
     <p>© 2026 CarePlus Clinical Laboratory</p>
 </footer>
+
+
+<script>
+
+function checkPriority(){
+
+    let age = Number(prompt("Enter patient age:"));
+    let temperature = Number(prompt("Enter temperature in °C:"));
+    let severity = prompt("Enter severity (mild/moderate/severe):");
+    let emergency = prompt("Is this an emergency? (yes/no):");
+
+    severity = severity.toLowerCase();
+    emergency = emergency.toLowerCase();
+
+    let result;
+
+    if(emergency === "yes"){
+        result = "Emergency Consultation Required";
+    }
+    else if(temperature >= 39 || severity === "severe"){
+        result = "High Priority Consultation";
+    }
+    else if(age >= 60 && severity === "moderate"){
+        result = "Priority Consultation";
+    }
+    else{
+        result = "Regular Consultation";
+    }
+
+    document.getElementById("priorityResult").innerHTML =
+        "<h3>Result</h3><p>" + result + "</p>";
+
+    console.log(result);
+    alert(result);
+
+}
+
+</script>
 
 </body>
 </html>

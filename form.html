@@ -2,73 +2,8 @@
 <html>
 <head>
     <title>Patient Registration</title>
-
-    <style>
-        body {
-            margin: 0;
-            font-family: Arial, sans-serif;
-            background: #F2FAF9;
-            color: #243B53;
-        }
-
-        header {
-            background: #073B4C;
-            color: white;
-            text-align: center;
-            padding: 25px;
-        }
-
-        nav {
-            background: #118AB2;
-            text-align: center;
-            padding: 15px;
-        }
-
-        nav a {
-            color: white;
-            text-decoration: none;
-            margin: 10px;
-            font-weight: bold;
-        }
-
-        main {
-            width: 70%;
-            margin: 30px auto;
-            background: white;
-            padding: 30px;
-        }
-
-        label {
-            font-weight: bold;
-        }
-
-        input, select, textarea {
-            width: 90%;
-            padding: 10px;
-            margin: 7px 0 15px;
-            border: 1px solid #999;
-        }
-
-        input[type="radio"],
-        input[type="checkbox"] {
-            width: auto;
-        }
-
-        .button {
-            background: #06A77D;
-            color: white;
-            border: none;
-            padding: 12px 25px;
-            cursor: pointer;
-        }
-
-        footer {
-            background: #073B4C;
-            color: white;
-            text-align: center;
-            padding: 15px;
-        }
-    </style>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="form.css">
 </head>
 
 <body>
@@ -82,87 +17,76 @@
     <a href="index.html">Home</a>
     <a href="tests.html">Tests</a>
     <a href="details.html">Details</a>
-    <a href="gallery.html">Gallery</a>
-    <a href="map.html">Test Map</a>
+    <a href="doctors.html">Doctors</a>
     <a href="table.html">Prices</a>
-    <a href="form.html">Register</a>
-    
+    <a href="registration.html">Register</a>
+    <a href="reports.html">Reports</a>
+    <a href="health.html">Health Info</a>
     <a href="media.html">Media</a>
 </nav>
 
-<main>
-
-<h2 style="color:#073B4C;">Patient Registration Form</h2>
-
-<p>
-    Please enter your details below to request a laboratory test.
-</p>
-
 <form>
 
-<label>Full Name *</label><br>
-<input type="text" placeholder="Enter your full name" required>
+    <fieldset>
 
-<label>Email Address *</label><br>
-<input type="email" placeholder="example@email.com" required>
+        <legend>Patient Details</legend>
 
-<label>Mobile Number *</label><br>
-<input type="tel" placeholder="Enter mobile number" required>
+        <label>Full Name</label>
+        <input type="text" placeholder="Enter your full name"
+               required autofocus>
 
-<label>Date of Birth *</label><br>
-<input type="date" required>
+        <label>Age</label>
+        <input type="number" placeholder="Enter your age" required>
 
-<label>Gender</label><br>
+        <label>Gender</label>
+        <select required>
+            <option value="">Select Gender</option>
+            <option>Male</option>
+            <option>Female</option>
+            <option>Other</option>
+        </select>
 
-<input type="radio" name="gender"> Male
-<input type="radio" name="gender"> Female
-<input type="radio" name="gender"> Other
+        <label>Mobile Number</label>
+        <input type="tel" placeholder="Enter mobile number"
+               pattern="[0-9]{10}" required>
 
-<br><br>
+        <label>Email</label>
+        <input type="email" placeholder="Enter email">
 
-<label>Select Department *</label><br>
+        <label>Date of Birth</label>
+        <input type="date">
 
-<select required>
-    <option value="">Select Department</option>
-    <option>Hematology</option>
-    <option>Biochemistry</option>
-    <option>Pathology</option>
-</select>
+        <label>Select Test</label>
+        <select required>
+            <option value="">Select Test</option>
+            <option>CBC Test</option>
+            <option>Urine Test</option>
+            <option>Thyroid Profile</option>
+            <option>Lipid Profile</option>
+            <option>Liver Function Test</option>
+            <option>Kidney Function Test</option>
+        </select>
 
-<label>Select Test *</label><br>
+        <label>Appointment Date</label>
+        <input type="date" required>
 
-<select required>
-    <option value="">Select Test</option>
-    <option>Complete Blood Count</option>
-    <option>Urine Routine</option>
-    <option>Thyroid Profile</option>
-    <option>Liver Function Test</option>
-    <option>Kidney Function Test</option>
-</select>
+        <label>Sample Collection</label>
+        <select>
+            <option>Visit Laboratory</option>
+            <option>Home Collection</option>
+        </select>
 
-<label>Preferred Appointment Date *</label><br>
-<input type="date" required>
+        <label>Address</label>
+        <textarea placeholder="Enter your address"></textarea>
 
-<label>Address</label><br>
-<textarea rows="4" placeholder="Enter your address"></textarea>
+        <label>Upload Prescription</label>
+        <input type="file">
 
-<label>Additional Message</label><br>
-<textarea rows="4" placeholder="Any additional information"></textarea>
+        <button type="submit">Register</button>
 
-<br>
-
-<input type="checkbox" required>
-I agree to provide accurate information.
-
-<br><br>
-
-<input class="button" type="submit" value="Submit Registration">
-
-<input class="button" type="reset" value="Clear Form">
+    </fieldset>
 
 </form>
-
-</main>
 
 <footer>
     <p>© 2026 CarePlus Clinical Laboratory</p>

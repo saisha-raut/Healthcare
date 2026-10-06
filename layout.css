@@ -1,0 +1,33 @@
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+}
+
+.container {
+    display: flex;
+    min-height: 400px;
+}
+
+.sidebar-layout {
+    width: 30%;
+    background: #D9F3EE;
+    padding: 25px;
+}
+
+.sidebar-layout p {
+    padding: 10px;
+    border-bottom: 1px solid white;
+}
+
+.content-layout {
+    width: 70%;
+    padding: 30px;
+    background: white;
+}
+
+footer {
+    background: #073B4C;
+    color: white;
+    text-align: center;
+    padding: 15px;
+}
